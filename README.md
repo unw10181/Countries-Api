@@ -50,9 +50,8 @@ A fully responsive web application that displays country data pulled from the RE
 ## Design
 
 - Layout and typography guided by the Frontend Mentor style guide
-- Responsive grid system for displaying country cards
+- Responsive grid/ flexbox system for displaying country cards
 - Theme switching implemented with CSS variables
-- Mobile-first design approach
 
 ---
 
