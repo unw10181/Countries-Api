@@ -13,9 +13,13 @@ body {
   min-height: 100vh;
 }
 
-body.color-change {
+.color-change {
   background-color: #1f2d36;
   color: white;
+}
+.color-change header {
+  background-color: #455a66;
+  color: #f4f4f4;
 }
 
 header {

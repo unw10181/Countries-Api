@@ -64,8 +64,9 @@ homeBtn.addEventListener("click", () => {
   window.location.href = "index.html"; //home page
 });
 
-toggleTheme.addEventListener("click", (e) => {
-  e.document.body.classList.toggle("color-change");
+toggleTheme.addEventListener("click", () => {
+  document.body.classList.toggle("color-change");
+
   if (document.body.classList.contains("color-change")) {
     toggleTheme.textContent = "Light Mode";
   } else {
