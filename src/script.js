@@ -55,6 +55,8 @@ function formulateData(data) {
 // test();
 
 pullAllCountries();
+
+
 //Search functionality
 searchInput.addEventListener("input", (e) => {
   const value = e.target.value.toLowerCase();
@@ -63,3 +65,4 @@ searchInput.addEventListener("input", (e) => {
   );
   formulateData(filtered);
 });
+
