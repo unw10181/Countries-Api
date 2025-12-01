@@ -65,11 +65,34 @@ header {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
+.grid-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 2.5rem;
+}
+
+.country-card {
+  background-color: #ffffff;
+  border-radius: 5%;
+  justify-content: center;
+}
+.country-card h3,
+p {
+}
+.country-card img {
+  position: relative;
+}
+
 /* 
 Mobile Devices */
 @media (max-width: 600px) {
   header {
     padding: 1rem;
+    width: 100%;
   }
 
   h1 {
@@ -78,7 +101,8 @@ Mobile Devices */
 
   #controls {
     flex-direction: column;
-    align-items: stretch;
+    /* align-items: stretch; */
+    justify-content: center;
   }
 
   #search-input,
@@ -88,10 +112,13 @@ Mobile Devices */
   }
 
   .grid-container {
-    grid-template-columns: 1fr; /* One card per row on mobile */
+    grid-template-columns: 1fr;
+    /* background-color: #ffffff; */
   }
 
   .country-card img {
     height: 200px;
+    width: 100%;
+    border-radius: 5%;
   }
 }
