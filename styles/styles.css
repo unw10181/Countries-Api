@@ -86,12 +86,17 @@ p {
   justify-self: center;
   gap: 10px;
   margin: 10px;
+  text-decoration: none;
 }
 .country-card img {
   position: relative;
   width: 100%;
   height: 150px;
   border-radius: 3%;
+}
+a {
+  text-decoration: none;
+  color: #111517;
 }
 
 /* 

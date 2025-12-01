@@ -5,7 +5,7 @@ let allCountries = [];
 
 async function pullAllCountries() {
   const url =
-    "https://restcountries.com/v3.1/all?fields=flags,name,population,region,capital,languages";
+    "https://restcountries.com/v3.1/all?fields=flags,name,population,region,capital,languages,cca3";
   try {
     const response = await fetch(url);
     if (!response.ok) {
@@ -35,7 +35,7 @@ function formulateData(data) {
     const card = document.createElement("div");
     card.className = "country-card";
     card.innerHTML = `
-    <a href="country.html?code${country.cca3}">
+    <a href="country.html?code=${country.cca3}">
     <img src="${country.flags.png}" alt="Flag of ${country.flags.alt}">
       <h3>${country.name.common}</h3>
       <p><strong>Population:</strong> ${country.population.toLocaleString()}</p>
