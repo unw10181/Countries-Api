@@ -21,6 +21,9 @@ body {
   background-color: #455a66;
   color: #f4f4f4;
 }
+.color-change .country-card:hover {
+  background-color: rgb(101, 219, 219);
+}
 
 header {
   width: 100%;
