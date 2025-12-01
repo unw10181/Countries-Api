@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  background-color: #f4f4f4;
+  color: #111517;
+  min-height: 100vh;
+}
+
+header {
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+  padding: 1.2rem 1.5rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dark-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#btn {
+  background-color: #ffffff;
+  border: #ffffff;
+}
+
+#controls {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+#search-input {
+  flex: 1;
+  max-width: 450px;
+  padding: 1rem;
+  border-radius: 6px;
+  border: none;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+#region-filter {
+  width: 200px;
+  padding: 1rem;
+  border-radius: 6px;
+  border: none;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* 
+Mobile Devices */
+@media (max-width: 600px) {
+  header {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 18px;
+  }
+
+  #controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #search-input,
+  #region-filter {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr; /* One card per row on mobile */
+  }
+
+  .country-card img {
+    height: 200px;
+  }
+}

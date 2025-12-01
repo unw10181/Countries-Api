@@ -10,9 +10,15 @@
   <body>
     <header>
       <h1>Where in the World?</h1>
-      <section id="dark-mode">
-        <img src="" alt="" id="" />
-        <button id="theme-toggle">Dark Mode</button>
+      <section class="dark-section">
+        <img
+          src="./design/crescent.jpg"
+          alt="Crescent Moon"
+          id="crescent"
+          width="30px"
+          height="30px"
+        />
+        <button id="btn" class="theme-toggle">Dark Mode</button>
       </section>
     </header>
     <section id="controls">
@@ -23,12 +29,12 @@
         placeholder="Search for a Country..."
       />
       <select name="region-filter" id="region-filter">
-        <option value="Filter by Region"></option>
-        <option value="Africa"></option>
-        <option value="America"></option>
-        <option value="Asia"></option>
-        <option value="Europe"></option>
-        <option value="Ocenia"></option>
+        <option value="Filter by Region">Filter by Region</option>
+        <option value="Africa">Africa</option>
+        <option value="America">America</option>
+        <option value="Asia">Asia</option>
+        <option value="Europe">Europe</option>
+        <option value="Ocenia">Ocenia</option>
       </select>
     </section>
     <section id="countries-container" class="grid-container"></section>
