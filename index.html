@@ -9,8 +9,8 @@
   </head>
   <body>
     <header>
-      <h1>Where in the World?</h1>
-      <section class="dark-section">
+      <h1 aria-label="Header">Where in the World?</h1>
+      <section aria-label="Dark Section Toggle" class="dark-section">
         <img
           src="./design/crescent.jpg"
           alt="Crescent Moon"
@@ -24,11 +24,16 @@
     <section id="controls">
       <input
         type="text"
+        aria-label="Search Input Categort"
         name="search-input"
         id="search-input"
         placeholder="Search for a Country..."
       />
-      <select name="region-filter" id="region-filter">
+      <select
+        name="region-filter"
+        id="region-filter"
+        aria-label="Input Options for Region Selection"
+      >
         <option value="Filter by Region">Filter by Region</option>
         <option value="Africa">Africa</option>
         <option value="Americas">Americas</option>
