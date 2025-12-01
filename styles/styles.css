@@ -30,7 +30,15 @@ header {
   gap: 10px;
 }
 
-#btn {
+.dark-section:hover {
+  background-color: darkorange;
+}
+
+#toggle-btn {
+  background-color: #ffffff;
+  border: #ffffff;
+}
+#toggle-btn {
   background-color: #ffffff;
   border: #ffffff;
 }
@@ -81,6 +89,9 @@ header {
   justify-content: center;
   height: 350px;
 }
+.country-card:hover {
+  background-color: rgb(255, 161, 38);
+}
 .country-card h3,
 p {
   justify-self: center;
@@ -97,6 +108,11 @@ p {
 a {
   text-decoration: none;
   color: #111517;
+}
+
+body.color-change {
+  background-color: #1f2d36;
+  color: white;
 }
 
 /* 

@@ -1,4 +1,5 @@
 const container = document.getElementById("country-detail");
+const toggleTheme = document.getElementById("theme-toggle");
 
 document.addEventListener("DOMContentLoaded", async () => {
   let localData = [];
@@ -9,7 +10,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   if (!code) return;
 
-  const url = `https://restcountries.com/v3.1/alpha/${code}?fields=name,flags,population,region,subregion,capital,languages,borders`;
+  const url = `https://restcountries.com/v3.1/alpha/${code}?fields=name,flags,population,region,subregion,capital,languages,borders,cca3`;
 
   try {
     const response = await fetch(url); //specific country
@@ -27,6 +28,14 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 function displayCountryDetail(country) {
   // const detailInfo = document.createElement
+
+  let bordersHTML = "None"; // Default for no borders
+  if (country.borders && country.borders.length > 0) {
+    bordersHTML = country.borders
+      .map((code) => `<a href="country.html?code=${code}">${code}</a>`)
+      .join(" "); // separate links with a space
+  }
+
   container.innerHTML = `
     <img src="${country.flags.png}" alt="${
     country.flags.alt || "Country flag"
@@ -39,13 +48,27 @@ function displayCountryDetail(country) {
     <p><strong>Languages:</strong> ${
       country.languages ? Object.values(country.languages).join(", ") : "N/A"
     }</p>
-    <a>
-    <p><strong>Borders:</strong> ${country.borders?.join(", ") ?? "None"}</p>
-    </a>
+    
+    <p><strong>Borders:</strong> ${bordersHTML}</p>
+    
   `;
 }
 
 const backBtn = document.getElementById("back-btn");
 backBtn.addEventListener("click", () => {
   window.history.back(); // Go back to the main page
+});
+
+const homeBtn = document.getElementById("home-btn");
+homeBtn.addEventListener("click", () => {
+  window.history.href = "index.html";
+});
+
+toggleTheme.addEventListener("click", (e) => {
+  e.document.body.classList.toggle("color-change");
+  if (document.body.classList.contains("color-change")) {
+    toggleTheme.textContent = "Light Mode";
+  } else {
+    toggleTheme.textContent = "Dark Mode";
+  }
 });

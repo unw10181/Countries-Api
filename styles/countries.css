@@ -19,6 +19,11 @@ body {
   gap: 10px;
 }
 
+body.color-change {
+  background-color: #1f2d36;
+  color: white;
+}
+
 header {
   width: 100%;
   background-color: #ffffff;
@@ -30,7 +35,7 @@ header {
   align-items: center;
 }
 
-#btn {
+#toggle-btn {
   background-color: #ffffff;
   border: #ffffff;
 }
@@ -39,6 +44,7 @@ header {
   background-color: #ffffff55;
   border: #000000;
   size: 20px;
+  border: #000000 1px;
 }
 
 #country-detail {
@@ -46,8 +52,32 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 20px;
 }
+
 #country-detail img {
   height: 200px;
   width: 200px;
+}
+.btn {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  gap: 25px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+@media (max-width: 600px) {
+  header {
+    padding: 1rem;
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 18px;
+  }
 }

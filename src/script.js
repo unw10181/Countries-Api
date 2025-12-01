@@ -1,6 +1,7 @@
 const countriesContainer = document.getElementById("countries-container");
 const searchInput = document.getElementById("search-input");
 const regionFilter = document.getElementById("region-filter");
+const toggleTheme = document.getElementById("toggle-btn");
 let allCountries = [];
 
 async function pullAllCountries() {
@@ -79,4 +80,13 @@ regionFilter.addEventListener("change", (e) => {
     ? allCountries.filter((country) => country.region == value)
     : allCountries;
   formulateData(filtered);
+});
+
+toggleTheme.addEventListener("click", (e) => {
+  e.document.body.classList.toggle("color-change");
+  if (document.body.classList.contains("color-change")) {
+    toggleTheme.textContent = "Light Mode";
+  } else {
+    toggleTheme.textContent = "Dark Mode";
+  }
 });
