@@ -28,8 +28,17 @@ class NotRetrieveCountry extends Error {
 function formulateData(data) {
   const countriesContainer = document.getElementById("countries-container");
   countriesContainer.innerHTML = "";
-  data.array.forEach((country) => {
-    
+  data.forEach((country) => {
+    const card = document.createElement("div");
+    card.className = "country-card";
+    card.innerHTML = `
+    <img src="${country.flags.png}" alt="Flag of ${country.flags.alt}">
+      <h3>${country.name.common}</h3>
+      <p><strong>Population:</strong> ${country.population.toLocaleString()}</p>
+      <p><strong>Region:</strong> ${country.region}</p>
+      <p><strong>Capital:</strong> ${country.capital?.[0] ?? "N/A"}</p>
+    `;
+    countriesContainer.appendChild(card);
   });
 }
 
@@ -43,7 +52,4 @@ function formulateData(data) {
 
 // test();
 
-
 pullAllCountries();
-
-
