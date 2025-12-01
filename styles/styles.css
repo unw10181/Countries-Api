@@ -13,6 +13,11 @@ body {
   min-height: 100vh;
 }
 
+body.color-change {
+  background-color: #1f2d36;
+  color: white;
+}
+
 header {
   width: 100%;
   background-color: #ffffff;
@@ -34,10 +39,6 @@ header {
   background-color: darkorange;
 }
 
-#toggle-btn {
-  background-color: #ffffff;
-  border: #ffffff;
-}
 #toggle-btn {
   background-color: #ffffff;
   border: #ffffff;
@@ -108,11 +109,6 @@ p {
 a {
   text-decoration: none;
   color: #111517;
-}
-
-body.color-change {
-  background-color: #1f2d36;
-  color: white;
 }
 
 /* 

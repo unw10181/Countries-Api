@@ -56,12 +56,12 @@ function displayCountryDetail(country) {
 
 const backBtn = document.getElementById("back-btn");
 backBtn.addEventListener("click", () => {
-  window.history.back(); // Go back to the main page
+  window.history.back(); // Go back to last page
 });
 
 const homeBtn = document.getElementById("home-btn");
 homeBtn.addEventListener("click", () => {
-  window.history.href = "index.html";
+  window.location.href = "index.html"; //home page
 });
 
 toggleTheme.addEventListener("click", (e) => {
