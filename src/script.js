@@ -1,3 +1,7 @@
+const countriesContainer = document.getElementById("countries-container");
+const searchInput = document.getElementById("search-input");
+let allCountries = [];
+
 async function pullAllCountries() {
   const url =
     "https://restcountries.com/v3.1/all?fields=flags,name,population,region,capital,languages";
@@ -9,10 +13,9 @@ async function pullAllCountries() {
       );
     }
     const data = await response.json();
-    console.log(data);
+    allCountries = data;
+    // console.log(data);
     formulateData(data);
-
-    displayCountries(data);
   } catch (error) {
     console.error("The Error is: " + error.message);
   }
@@ -26,7 +29,6 @@ class NotRetrieveCountry extends Error {
 }
 
 function formulateData(data) {
-  const countriesContainer = document.getElementById("countries-container");
   countriesContainer.innerHTML = "";
   data.forEach((country) => {
     const card = document.createElement("div");
@@ -53,3 +55,11 @@ function formulateData(data) {
 // test();
 
 pullAllCountries();
+//Search functionality
+searchInput.addEventListener("input", (e) => {
+  const value = e.target.value.toLowerCase();
+  const filtered = allCountries.filter((c) =>
+    c.name.common.toLowerCase().includes(value)
+  );
+  formulateData(filtered);
+});
