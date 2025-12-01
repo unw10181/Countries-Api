@@ -1,5 +1,6 @@
 const countriesContainer = document.getElementById("countries-container");
 const searchInput = document.getElementById("search-input");
+const regionFilter = document.getElementById("region-filter");
 let allCountries = [];
 
 async function pullAllCountries() {
@@ -44,18 +45,21 @@ function formulateData(data) {
   });
 }
 
-// async function test() {
-//   const res = await fetch(
-//     "https://restcountries.com/v3.1/subregion/Northern Europe"
-//   );
-//   const data = await res.json();
-//   console.log(data);
-// }
+async function test() {
+  const res = await fetch("https://restcountries.com/v3.1/region/America");
+  const data = await res.json();
+  console.log(data);
+}
+async function testTwo() {
+  const res = await fetch("https://restcountries.com/v3.1/region/Oceania");
+  const data = await res.json();
+  console.log(data);
+}
 
-// test();
+test();
+testTwo();
 
 pullAllCountries();
-
 
 //Search functionality
 searchInput.addEventListener("input", (e) => {
@@ -66,3 +70,11 @@ searchInput.addEventListener("input", (e) => {
   formulateData(filtered);
 });
 
+//Filter functionality
+regionFilter.addEventListener("change", (e) => {
+  const value = e.target.value;
+  const filtered = value
+    ? allCountries.filter((country) => country.region == value)
+    : allCountries;
+  formulateData(filtered);
+});
